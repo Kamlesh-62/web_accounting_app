@@ -1,26 +1,29 @@
 import { useState } from "react";
+import { useSignup } from "../../hooks/useSignup";
 
 const Signup = () => {
 
     const[password,setPassword] = useState('') 
     const[email,setEmail] = useState('') 
-    const[userName,setUserName] = useState('') 
+    const[displayName,setUserName] = useState('')
+    const { signup, error, pending } = useSignup();
 
     const handleSignUpSubmit = (e) => {
         e.preventDefault()
-        console.log(userName,email,password)
+        signup(email, password, displayName)
+        console.log(displayName,email,password)
     }
     
 
     return (
         <form action="" onSubmit={handleSignUpSubmit}>
-            <label htmlFor="userName">User Name</label>
+            <label htmlFor="displayName">User Name</label>
             <input 
             type="text" 
             placeholder="User Name" 
-            id="userName"
+            id="displayName"
             onChange={(e) => setUserName(e.target.value)}
-            value={userName} />
+            value={displayName} />
             <label htmlFor="email">Email</label>
             <input 
             type="email" 
@@ -35,7 +38,9 @@ const Signup = () => {
             id="password"
             onChange={(e) => setPassword(e.target.value) }
             value={password} />
-            <button>Signup</button>
+            {!pending && <button>Signup</button> }
+            {pending && <button disabled style={{ backgroundColor: "lightblue" }}>Signup...</button> }
+            {error && <p>{error}</p>}
         </form>
     )
 }

@@ -1,6 +1,6 @@
 // all routing import
 import React from 'react';
-import { Route, Routes, Router } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 // style inport here
 import './App.css';
