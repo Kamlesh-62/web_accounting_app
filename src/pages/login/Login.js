@@ -1,21 +1,21 @@
 import { useState } from "react";
+import { useLogin } from "../../hooks/useLogin";
 
 const Login = () => {
     const [email,setEmail] = useState('')
     const [password,setPassword] = useState('')
+    const {login, error, pending} = useLogin()
 
     const handleLoginSubmit = (e) => {
         e.preventDefault();
-        console.log(email,password)
+        login(email, password)
     }
     
     const handleEmail = (e) => {
         setEmail(e.target.value)
-        console.log(e.target.value)
     }
     const handlePassword = (e) => {
         setPassword(e.target.value)
-        console.log(e.target.value)
     }   
 
 
@@ -36,6 +36,8 @@ const Login = () => {
             onChange={handlePassword}
             value={password} />
             <button>Login</button>
+            {pending && <button disabled style={{ backgroundColor: "lightblue" }}>Login...</button>}
+            {error && <p>{error}</p>}
         </form>
     )
 }
