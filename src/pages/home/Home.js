@@ -1,8 +1,13 @@
-
+import JournalEntryForm from "./JournalEntryForm";
 const Home = () => {
     return(
         <div>
-            home
+            <div>
+                transaction history
+            </div>
+            <div>
+                <JournalEntryForm />
+            </div>
         </div>
     )
 }
