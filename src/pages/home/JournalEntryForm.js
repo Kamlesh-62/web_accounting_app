@@ -1,18 +1,26 @@
 import { useState } from "react";
+import { useFireStore } from "../../hooks/useFirestore";
 
-const JournalEntryForm = () => {
+const JournalEntryForm = ({uid}) => {
     const [transactionName, setTransactionName] = useState('')
     const [amount, setAmount] = useState('') 
+    
+    const { addDocument, state} = useFireStore('transaction')
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(transactionName, amount)
+        addDocument({
+            uid,
+            transactionName,
+            amount,
+        }) 
+        console.log(transactionName,amount,uid)
     }
 
     return(
         <>
         <h3>Add Transaction</h3>
-        <form action="" onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
             <label htmlFor="trasactionName">Trasaction Name:</label>
             <input type="text" id="trasactionName" 
             placeholder="Trasaction Name"

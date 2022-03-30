@@ -16,11 +16,15 @@ export const authReducer = (state, action) => {
     }
 }
 
+
 export const AuthContextProvider = ({ children }) => {
-    const [state, dispatch] = useReducer(authReducer, {
+
+    let initialState = {
         user: null,
         authIsReady: false
-    })
+    }
+    
+    const [state, dispatch] = useReducer(authReducer, initialState)
 
     useEffect( () => {
         const unsub = projectAuth.onAuthStateChanged( (user) => {
