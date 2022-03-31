@@ -20,11 +20,9 @@ const firestoreReducer = (state, action) => {
         default:
             return state
     }
-
 }
 
 export const useFireStore = (collection) => {
-
     const [state, dispatch] = useReducer(firestoreReducer, initialState);
     const [isCancelled, setIsCancelled] = useState(false)
 
@@ -45,10 +43,8 @@ export const useFireStore = (collection) => {
 
         try{
             const createdAt = projectTimestamp.fromDate(new Date())
-
             const addedDoc = await ref.add({...doc, createdAt})
             isNotCancelled({type:'ADDED_DOC', payload: addedDoc})
-
 
         }catch(err){
             isNotCancelled({type:'ERROR', payload: err.message})
@@ -57,14 +53,14 @@ export const useFireStore = (collection) => {
     }
 
     // delete entry
-    const deleteDocument = async (id) => {
+    const deleteDocument = async (doc) => {
 
     }
 
     // clean up function
     useEffect ( () => {
         return() => setIsCancelled(true);
-    })
+    },[])
 
     return {addDocument, deleteDocument, state}
 }

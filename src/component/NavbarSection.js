@@ -6,7 +6,6 @@ const Navbar = () => {
 
     const {user} = useAuthContext()
     const {logout} = useLogout()
-    console.log(user)
 
     return(
         <header>

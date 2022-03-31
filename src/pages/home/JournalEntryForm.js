@@ -1,10 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useFireStore } from "../../hooks/useFirestore";
 
 const JournalEntryForm = ({uid}) => {
     const [transactionName, setTransactionName] = useState('')
     const [amount, setAmount] = useState('') 
-    
     const { addDocument, state} = useFireStore('transaction')
 
     const handleSubmit = (e) => {
@@ -16,6 +15,15 @@ const JournalEntryForm = ({uid}) => {
         }) 
         console.log(transactionName,amount,uid)
     }
+    
+
+    useEffect(() => {
+        if (state.success) {
+            setTransactionName('')
+            setAmount('')
+        }
+    }, [state.success])
+
 
     return(
         <>
@@ -36,7 +44,6 @@ const JournalEntryForm = ({uid}) => {
             required
             />
             <button>Post Entry</button>
-
         </form>
         </>
     )

@@ -2,9 +2,13 @@ import JournalEntryForm from "./JournalEntryForm";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import { useEntryCollection } from "../../hooks/useEntryCollection";
 import  EntryList from "./EntryList";
+
+
 const Home = () => {
     const {user} = useAuthContext()
-    const {documents, error} = useEntryCollection('trasaction')
+    const { documents, error} = useEntryCollection('transaction')
+    console.log(documents)
+    
     return(
         <div>
             <div>
