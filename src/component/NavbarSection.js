@@ -26,6 +26,12 @@ const Navbar = () => {
                     )}
                     {user && (
                         <>
+                            <li>
+                                <Link to='/'> Home</Link>
+                            </li>
+                            <li>
+                                <Link to='/balancesheet'> Balance Sheet</Link>
+                            </li>
                             <li>Hello, {user.displayName}</li>
                             <li>
                                 <button onClick={logout}>Logout</button>

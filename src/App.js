@@ -10,6 +10,7 @@ import Navbar from './component/NavbarSection';
 
 // all page are import here
 import Home from './pages/home/Home.js'
+import BalanceSheet from './pages/home/BalanceSheet'
 import Login from './pages/login/Login.js'
 import Signup from './pages/signup/Signup.js'
 import {useAuthContext} from './hooks/useAuthContext'
@@ -29,6 +30,8 @@ function App() {
           element={ user ? <Navigate to="/" /> : <Login />} />
           <Route path="/signup" 
           element={ user ? <Navigate to="/" /> : <Signup />} />
+          <Route path="/balancesheet" 
+          element={<BalanceSheet />} />
         </Routes>
       </>
       )}

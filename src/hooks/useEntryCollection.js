@@ -1,12 +1,23 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { projectFirestore } from "../firebase/config"
 
-export const useEntryCollection = (collection) => {
+export const useEntryCollection = (collection, _query, _orderBy) => {
     const [documents,setDocuments] = useState(null)
     const [error,setError] = useState(null)
 
+
+    const query = useRef(_query).current
+    const orderBy = useRef(_orderBy).current
+
     useEffect( () => {
         let ref = projectFirestore.collection(collection)
+
+        if(query){
+            ref = ref.where(...query)
+        }
+        if(orderBy){
+            ref = ref.orderBy(...orderBy)
+        }
 
         const clearSubscribtion = ref.onSnapshot(snapshot => {
             let results = []
@@ -17,7 +28,6 @@ export const useEntryCollection = (collection) => {
             // update state
             setDocuments(results)
             setError(null)
-            console.log(results)
         },error =>{
             console.log(error)
             setError('Could not fetch the data')
@@ -26,7 +36,7 @@ export const useEntryCollection = (collection) => {
         return () => clearSubscribtion();
 
 
-    },[collection])
+    },[collection, query, orderBy])
     
     return {documents, error} 
 }

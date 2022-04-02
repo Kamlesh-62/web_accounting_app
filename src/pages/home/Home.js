@@ -6,8 +6,11 @@ import  EntryList from "./EntryList";
 
 const Home = () => {
     const {user} = useAuthContext()
-    const { documents, error} = useEntryCollection('transaction')
-    console.log(documents)
+    const { documents, error} = useEntryCollection(
+        'transaction',
+        ['uid', '==', user.uid],
+        ['createdAt', "desc"]
+        )
     
     return(
         <div>

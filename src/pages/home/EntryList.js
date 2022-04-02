@@ -1,6 +1,5 @@
 
 const EntryList= ({entries}) => {
-    console.log(entries);
     return(
         <ul>
             {entries.map((entry) => (
