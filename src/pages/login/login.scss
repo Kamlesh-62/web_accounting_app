@@ -1,0 +1,53 @@
+@import '../../style/root.scss';
+
+.login{
+
+    background-color: $backgroundColor;
+    
+    h2 {
+        text-align: center;
+        color: $darkDesignColor;
+        padding-top: 2rem;
+    }
+    .login-form{
+        height: 90vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;    
+        form {
+            input {
+                display: block;
+                margin: 1.5rem 0;
+                width: 300px;
+                height: 40px;
+                border-radius: 5px;
+                padding: 0.5rem 0 0.5rem 1rem;
+                letter-spacing: 1px;
+                background: transparent;
+                border: 2px solid $darkDesignColor;
+                color: $darkDesignColor;
+            }
+    
+            .login-btn {
+                width: 100%;
+                background-color: $darkDesignColor;
+                border: 2px solid $darkDesignColor;
+                color: $whiteColor;
+                letter-spacing: 1px;
+            }
+            .login-disable-btn{
+                width: 100%;
+                background-color: $backgroundColor;
+                border: 2px solid $darkDesignColor;
+                color: $darkDesignColor;
+                letter-spacing: 1px;
+            }
+        }
+    
+        .girlImage {
+            img {
+                height: 500px;
+            }
+        }
+    }
+}

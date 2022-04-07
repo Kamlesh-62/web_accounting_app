@@ -2,6 +2,7 @@ import JournalEntryForm from "./JournalEntryForm";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import { useEntryCollection } from "../../hooks/useEntryCollection";
 import  EntryList from "./EntryList";
+import './home.scss'
 
 
 const Home = () => {
@@ -13,7 +14,7 @@ const Home = () => {
         )
     
     return(
-        <div>
+        <div className="home-page">
             <div>
                 {error && <p>{error}</p>}
                 {documents && <EntryList entries={documents} />}

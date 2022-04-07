@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useLogin } from "../../hooks/useLogin";
+import './login.scss'
+import girlImage from '../../assets/girlImage.png'
 
 const Login = () => {
     const [email,setEmail] = useState('')
@@ -20,25 +22,33 @@ const Login = () => {
 
 
     return (
-        <form action="" onSubmit={handleLoginSubmit}>
-            <label htmlFor="email">Email</label>
-            <input 
-            type="email" 
-            id="email" 
-            placeholder="Email Address"
-            onChange={handleEmail}
-            value={email} />
-            <label htmlFor="password">Password</label>
-            <input 
-            type="password" 
-            id="password" 
-            placeholder="Password"
-            onChange={handlePassword}
-            value={password} />
-            <button>Login</button>
-            {pending && <button disabled style={{ backgroundColor: "lightblue" }}>Login...</button>}
-            {error && <p>{error}</p>}
-        </form>
+        <div className="login">
+            <h2>Login here</h2>
+            <div className="login-form">
+                <form onSubmit={handleLoginSubmit}>
+                    <label htmlFor="email" className="sr-only">Email</label>
+                    <input 
+                    type="email" 
+                    id="email" 
+                    placeholder="Email Address"
+                    onChange={handleEmail}
+                    value={email} />
+                    <label htmlFor="password" className="sr-only" >Password</label>
+                    <input 
+                    type="password" 
+                    id="password" 
+                    placeholder="Password"
+                    onChange={handlePassword}
+                    value={password} />
+                    {!pending && <button className="login-btn btn">Login</button>}
+                    {pending && <button disabled className="login-disable-btn btn" >Login...</button>}
+                    {error && <p>{error}</p>}
+                </form>
+                <div className="girlImage">
+                    <img src={girlImage} alt="girl is writing on account page" />
+                </div>
+            </div>
+        </div>
     )
 }
 export default Login;

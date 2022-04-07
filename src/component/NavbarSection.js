@@ -1,7 +1,7 @@
 import {Link} from 'react-router-dom';
-// import logo from '../assets/ledgerLogo.png'
 import { useLogout } from '../hooks/useLogout';
 import { useAuthContext } from '../hooks/useAuthContext';
+import './navbarSection.scss'
 const Navbar = () => {
 
     const {user} = useAuthContext()
@@ -9,11 +9,13 @@ const Navbar = () => {
 
     return(
         <header>
-            <nav>
-                <div >
-                    <img src='' alt="" />
+            <nav className='navbar wrapper'>
+                <div className='compnay-logo'>
+                    
+                    <h3><Link to='/'>Money Tracker</Link></h3>
+                    {/* <img src={logo} alt="This is comany logo" /> */}
                 </div>
-                <ul>
+                <ul className='menu'>
                     {!user && (
                         <>
                             <li>
@@ -30,11 +32,11 @@ const Navbar = () => {
                                 <Link to='/'> Home</Link>
                             </li>
                             <li>
-                                <Link to='/balancesheet'> Balance Sheet</Link>
+                                <Link to='/report'> Report</Link>
                             </li>
-                            <li>Hello, {user.displayName}</li>
-                            <li>
-                                <button onClick={logout}>Logout</button>
+                            <li className='userName'>Hello, {user.displayName}</li>
+                            <li className='logOut-btn'>
+                                <button  className='btn' onClick={logout}>Logout</button>
                             </li>
                         </>
                     )}

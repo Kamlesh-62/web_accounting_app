@@ -3,7 +3,7 @@ import React from 'react';
 import { Route, Routes, Navigate} from 'react-router-dom';
 
 // style inport here
-import './App.css';
+import './App.scss';
 
 // all component here
 import Navbar from './component/NavbarSection';
@@ -30,7 +30,7 @@ function App() {
           element={ user ? <Navigate to="/" /> : <Login />} />
           <Route path="/signup" 
           element={ user ? <Navigate to="/" /> : <Signup />} />
-          <Route path="/balancesheet" 
+          <Route path="/report" 
           element={<BalanceSheet />} />
         </Routes>
       </>
