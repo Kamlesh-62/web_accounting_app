@@ -1,0 +1,17 @@
+@import "../../style/root";
+
+.entryList{
+    padding-top: 5rem;
+    width: 60%;
+
+    .listOfentries{
+        
+        li{
+            border: 2px solid $darkDesignColor ;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 1rem;
+        }
+    }
+}

@@ -43,7 +43,7 @@ const Signup = () => {
                     id="password"
                     onChange={(e) => setPassword(e.target.value) }
                     value={password} />
-                    {!pending && <button className="signUp-btn btn" >Signup</button> }
+                    {!pending && <button className="signUp-btn btn" >Sign up</button> }
                     {pending && <button  className="signUp-disable-btn btn" disabled >Signup...</button> }
                     {error && <p>{error}</p>}
                 </form>

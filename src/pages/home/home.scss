@@ -1,5 +1,13 @@
 @import '../../style/root';
 
 .home-page{
-    background-color: $backgroundColor;
+    background: linear-gradient(to bottom, rgba(245, 246, 252, 0.8), rgba(243,
+    246,252, 0.8)),url(../../assets/homeBackground.png) right/50% no-repeat;
+    height: 100vh;
+    padding-top: 5rem;
+
+    .journalEntryForm-total{
+        display: flex;
+        justify-content: space-around;
+    }
 }

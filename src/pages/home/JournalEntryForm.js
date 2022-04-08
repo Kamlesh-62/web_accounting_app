@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useFireStore } from "../../hooks/useFirestore";
+import './journalEntry.scss'
 
 const JournalEntryForm = ({uid}) => {
     const [transactionName, setTransactionName] = useState('')
@@ -7,20 +8,21 @@ const JournalEntryForm = ({uid}) => {
     const [revenueExpense, setRevenueExpense] = useState('revenue')
     const [expenseType, setExpenseType] = useState('')
     const [revenueType, setRevenueType] = useState('')
+    const [date, setDate] = useState('')
     const { addDocument, state} = useFireStore('transaction')
 
     const handleSubmit = (e) => {
         e.preventDefault()
         addDocument({
-            uid,
-            transactionName,
             amount,
+            date,
+            expenseType,
             revenueExpense,
             revenueType,
-            expenseType
+            transactionName,
+            uid
         }) 
     }
-    console.log(revenueExpense, revenueType, expenseType)
 
     useEffect(() => {
         if (state.success) {
@@ -31,77 +33,87 @@ const JournalEntryForm = ({uid}) => {
 
 
     return(
-        <>
-        <h3>Add Transaction</h3>
-        <form onSubmit={handleSubmit}>
+        <section className="journalEntry-form">
+            <form onSubmit={handleSubmit}>
 
-            <label htmlFor="revenue/expense">Select Revenue/Experience</label>
-            <select 
-            name="revenue/expense" 
-            value={revenueExpense} 
-            id="revenue/expense" 
-            onChange={(e) => {setRevenueExpense(e.target.value)}}
-            >
-                <option value="placeholder" disabled>Revenue/Expense</option>
-                <option value='revenue' >Revenue</option>
-                <option value='expense' >Expense</option>
-            </select>
+                <h3>Add Transaction</h3>
+                
+                <label htmlFor="revenue/expense" className="sr-only">Select Revenue/Experience</label>
+                <select 
+                name="revenue/expense" 
+                value={revenueExpense} 
+                id="revenue/expense" 
+                onChange={(e) => {setRevenueExpense(e.target.value)}}
+                required
+                >
+                    <option value="" disabled>Revenue/Expense</option>
+                    <option value='revenue' >Revenue</option>
+                    <option value='expense' >Expense</option>
+                </select>
 
-            {revenueExpense === "revenue" ?
-            <>
-                <label htmlFor="revenueList">Revenue List</label>
+                {revenueExpense === "revenue" ?
+                <>
+                <label htmlFor="revenueList" className="sr-only">Revenue List</label>
                 <select 
                 name="Revenue list" 
                 id="revenueList"
                 value={revenueType}
                 onChange={(e) => {setRevenueType(e.target.value)}}
+                required
                 >
                     <option value="" disabled >Revenue List</option>
-                    <option value="salary">Salary</option>
-                    <option value="services">Services</option>
-                    <option value="sales">Sales</option>
+                    <option value="Sales">Sales</option>
+                    <option value="Income form services">Services</option>
                     <option value="other">Other Revenue</option>
                 </select> 
-            </>
-            : 
-            <>
-                <label htmlFor="ExpenseList">Expense List</label>
+                </>
+                : 
+                <>
+                <label htmlFor="ExpenseList" className="sr-only" >Expense List</label>
                 <select 
                 name="Expense list" 
                 id="ExpenseList"
                 value={expenseType}
                 onChange={(e) => { setExpenseType(e.target.value) }}
+                required
                 >
                     <option value="" disabled >Expense List</option>
-                    <option value="carExpense">Car(Insurance, Payment, Gas) </option>
+                    <option value="carExpens">Car(Insurance, Payment, Gas) </option>
+                    <option value="educationCost">Education Cost</option>
                     <option value="grocery">Grocery</option>
                     <option value="houseExpense">House(Rent, Mortgage, Utilities)</option>
+                    <option value="incomeTaxExpense"> Income Tax Expense</option>
                     <option value="miscellaneous">miscellaneous</option>
-                    <option value="tutionFees">Tution fees</option>
                     <option value="otherExpenses">Other Expense</option>
                 </select>
-            </>
-            }
+                </>
+                }
 
-            <label htmlFor="trasactionName">Trasaction Name:</label>
-            <input type="text" id="trasactionName" 
-            placeholder="Trasaction Name"
-            value={transactionName}
-            onChange={(e) => setTransactionName(e.target.value)}
-            required
-            />
+                <label htmlFor="trasactionName" className="sr-only" >Trasaction Name:</label>
+                <input type="text" id="trasactionName" 
+                placeholder="Trasaction Name"
+                value={transactionName}
+                onChange={(e) => setTransactionName(e.target.value)}
+                required
+                />
 
-            <label htmlFor="amount">Amount:</label>
-            <input type="number" id="amount" 
-            placeholder="Amount"
-            value={amount}
-            onChange={(e) => setAmount(e.target.value)}
-            required
-            />
+                <label htmlFor="amount" className="sr-only" >Amount:</label>
+                <input type="number" id="amount" 
+                placeholder="Amount"
+                value={amount}
+                onChange={(e) => setAmount(e.target.value)}
+                required
+                />
 
-            <button>Post Entry</button>
-        </form>
-        </>
+                <label htmlFor="date" className="sr-only">Date:</label>
+                <input type="date" id="date" name="transaction-date"
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+                min="2018-01-01" max="3018-12-31" />
+
+                <button className="post-btn btn">Post Entry</button>
+            </form>
+        </section>
     )
 }
 export default JournalEntryForm;
