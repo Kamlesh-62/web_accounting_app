@@ -43,10 +43,13 @@ header{
             .logOut-btn{
                 margin-right: 2rem;
                 .btn{
+                    background-color: $darkDesignColor;
+                    color: $whiteColor;
+                    border: 1px solid $darkDesignColor;
                     &:hover,
                     &:focus{
-                        background-color: $blackColor;
-                        color: $whiteColor;
+                        background-color: $whiteColor;
+                        color: $darkDesignColor;
                     }
                 }
             }

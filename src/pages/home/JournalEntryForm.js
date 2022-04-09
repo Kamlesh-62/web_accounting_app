@@ -3,13 +3,13 @@ import { useFireStore } from "../../hooks/useFirestore";
 import './journalEntry.scss'
 
 const JournalEntryForm = ({uid}) => {
-    const [transactionName, setTransactionName] = useState('')
     const [amount, setAmount] = useState('') 
-    const [revenueExpense, setRevenueExpense] = useState('revenue')
-    const [expenseType, setExpenseType] = useState('')
-    const [revenueType, setRevenueType] = useState('')
-    const [date, setDate] = useState('')
     const { addDocument, state} = useFireStore('transaction')
+    const [date, setDate] = useState('')
+    const [expenseType, setExpenseType] = useState('')
+    const [revenueExpense, setRevenueExpense] = useState('revenue')
+    const [revenueType, setRevenueType] = useState('')
+    const [transactionName, setTransactionName] = useState('')
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -28,6 +28,7 @@ const JournalEntryForm = ({uid}) => {
         if (state.success) {
             setTransactionName('')
             setAmount('')
+            setDate('')
         }
     }, [state.success])
 
@@ -109,7 +110,7 @@ const JournalEntryForm = ({uid}) => {
                 <input type="date" id="date" name="transaction-date"
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
-                min="2018-01-01" max="3018-12-31" />
+                min="2020-01-01" />
 
                 <button className="post-btn btn">Post Entry</button>
             </form>

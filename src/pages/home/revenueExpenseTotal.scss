@@ -1,0 +1,34 @@
+@import "../../style/root.scss";
+
+.revenueExpense{
+    margin-top: 2rem;
+    
+    section {
+        display: flex;
+        
+        figure{
+            img{
+                height: 100px;
+            }
+            p{
+                font-size: 1.5rem;
+                color: $darkDesignColor;
+            }
+            
+        }
+    }
+    .result div{
+        p{
+            padding: 2rem 1rem;
+            border-radius: 5px;
+            background-color: $whiteColor;
+            font-size: 1.2rem;
+        }
+        .positive span{
+            color: green;
+        }
+        .negative span{
+            color: red;
+        }
+    }
+}
