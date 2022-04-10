@@ -20,7 +20,7 @@ const Signup = () => {
     return (
         <div className="signUp">
             <h2> Signup here</h2>
-            <p>View a summary of money coming in and going out on the Money Tracker dashboard, and in cash flow reports.</p>
+            <p className="companyHeading" >View a summary of money coming in and going out on the Money Tracker dashboard, and in cash flow reports.</p>
             <div className="signUp-form">
                 <form onSubmit={handleSignUpSubmit} >
                     <label htmlFor="displayName" className="sr-only">User Name</label>

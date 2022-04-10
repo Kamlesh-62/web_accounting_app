@@ -11,7 +11,7 @@
         padding-top: 2rem;
         text-decoration: underline;
     }
-    p {
+    .companyHeading{
         color: $darkDesignColor;
         letter-spacing: 1px;
         margin: 0 auto;
@@ -27,10 +27,11 @@
         align-items: center;
         justify-content: center;
         form{
+            width: 300px;
             input{
                 display: block;
                 margin: 1.5rem 0;
-                width: 300px;
+                width: 100%;
                 height: 40px;
                 border-radius:5px;
                 padding: 0.5rem 0 0.5rem 1rem;
