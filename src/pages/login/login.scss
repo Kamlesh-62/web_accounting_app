@@ -1,16 +1,28 @@
 @import '../../style/root.scss';
 
 .login{
-
+    
+    height: 100vh;
     background-color: $backgroundColor;
+    padding-top: 3rem;
     
     h2 {
         text-align: center;
         color: $darkDesignColor;
         padding-top: 2rem;
+        text-decoration: underline;
+    }
+    p{
+        color: $darkDesignColor;
+        letter-spacing: 1px;
+        margin: 0 auto;
+        text-align: center;
+        width: 50%;
+        font-size: 1.5rem;
+        margin-top: 5rem;
+        line-height: 1.5;
     }
     .login-form{
-        height: 90vh;
         display: flex;
         align-items: center;
         justify-content: center;    

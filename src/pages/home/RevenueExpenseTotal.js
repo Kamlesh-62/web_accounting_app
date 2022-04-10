@@ -51,8 +51,8 @@ const RevenueExpenseTotal = ({ documents}) => {
             <article className='result'>
                 <div>
                     {revenueTotal >= expenseTotal ? 
-                        <p className='positive'> Your total revenue is <span>{revenueTotal - expenseTotal}</span>.</p>:
-                        <p className='negative'> Your total expense is <span>({revenueTotal - expenseTotal}) </span>.</p>}
+                        <p className='positive'> Your total revenue is <span>${revenueTotal - expenseTotal}</span>.</p>:
+                        <p className='negative'> Your total expense is <span>$({revenueTotal - expenseTotal}) </span>.</p>}
                 </div>
             </article>
         </main>
