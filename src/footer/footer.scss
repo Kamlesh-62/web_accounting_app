@@ -1,0 +1,21 @@
+@import '../style/root';
+
+footer{
+    p{
+        width: 100%;
+        background-color: $darkDesignColor;
+        color: $whiteColor;
+        padding: 0.5rem 0;
+        text-align: center;
+        text-transform: uppercase;
+        margin: 0; 
+
+        a{
+          color: $whiteColor;
+
+          &:hover{
+            text-decoration: underline;
+          }
+        }
+  }
+}

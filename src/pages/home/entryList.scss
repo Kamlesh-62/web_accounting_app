@@ -1,17 +1,81 @@
 @import "../../style/root";
 
 .entryList{
-    padding-top: 5rem;
-    width: 60%;
+    margin-top: 3rem;
+    padding: 1rem;
+    width: 50%;
+    background-color: $whiteColor;
+    border-radius: 10px;
+
+    h3{
+        color: $darkDesignColor;
+    }
 
     .listOfentries{
-        
+        margin-top: 2rem;
+        max-height: 300px;
+        overflow-y: scroll;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
         li{
-            // border: 2px solid $darkDesignColor ;
-            border-radius: 5px;
-            display: flex;
-            justify-content: space-between;
-            padding: 0 1rem;
+            border-radius: 3px;
+            flex: 0 0 45%;
+            padding: 0.35rem 1rem;
+            margin: 1rem;
+            background-color: $whiteColor;
+            position: relative;
+            box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+
+            .date{
+                position: absolute;
+                right: 20px;
+                top: 5px;
+                font-size: 0.9rem;
+                color: #B2B2B2;
+            }
+            
+            .delete-btn{
+                font-size: 1.5rem;
+                color: $darkDesignColor;
+                cursor: pointer;
+                position: absolute;
+                right: 20px;
+                bottom: 20px;
+                
+                &:hover{
+                    animation: shake 0.3s ease-in alternate-reverse infinite;
+                }
+            }
+
         }
+        li.revenue{
+            border-left: 10px solid #70c870;
+
+            .amount{
+                color: #70c870;
+                font-size: 1.5rem;
+            }
+        }
+        li.expense{
+            border-left: 10px solid #d47171;
+
+            .amount {
+                color: #d47171;
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
+@keyframes shake {
+    0%{
+        transform: rotate(25deg);
+    }
+    50%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(-25deg);
     }
 }

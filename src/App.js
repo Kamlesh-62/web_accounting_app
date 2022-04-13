@@ -7,13 +7,14 @@ import './App.scss';
 
 // all component here
 import Navbar from './component/NavbarSection';
+import {useAuthContext} from './hooks/useAuthContext';
 
 // all page are import here
 import Home from './pages/home/Home.js'
-import BalanceSheet from './pages/home/BalanceSheet'
+import Report from './pages/report/Report.js'
 import Login from './pages/login/Login.js'
-import Signup from './pages/signup/Signup.js'
-import {useAuthContext} from './hooks/useAuthContext'
+import Signup from './pages/signup/Signup.js';
+import Footer from "./footer/Footer.js"
 
 function App() {
   const { authIsReady, user} = useAuthContext();
@@ -31,10 +32,11 @@ function App() {
           <Route path="/signup" 
           element={ user ? <Navigate to="/" /> : <Signup />} />
           <Route path="/report" 
-          element={<BalanceSheet />} />
+          element={user ?  <Report to="/report" /> : <Login />} />
         </Routes>
       </>
       )}
+      <Footer />
     </React.Fragment>
   );
 }

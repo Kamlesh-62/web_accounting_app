@@ -18,6 +18,8 @@
         }
     }
     .result div{
+        box-shadow: 0 0 5px $darkDesignColor;
+        border-radius: 5px;
         p{
             padding: 2rem 1rem;
             border-radius: 5px;
@@ -25,10 +27,10 @@
             font-size: 1.2rem;
         }
         .positive span{
-            color: green;
+            color: #008000;
         }
         .negative span{
-            color: red;
+            color: #ff0000;
         }
     }
 }
