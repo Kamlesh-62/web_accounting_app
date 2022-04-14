@@ -52,3 +52,18 @@
         }
     }
 }
+
+@media (max-width:600px){
+    .journalEntry-form{
+        form{
+            padding: 4rem 2rem;
+            select,
+            input,
+            input[type='date'],
+            button{
+                width: 270px;
+            
+            }
+        }
+    }
+}

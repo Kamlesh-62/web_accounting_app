@@ -79,3 +79,14 @@
         transform: rotate(-25deg);
     }
 }
+
+@media (max-width:800px){
+    .entryList{
+        width: 95%;
+        padding: 1rem 0.5rem;
+
+        .listOfentries{
+
+        }
+    }
+}
