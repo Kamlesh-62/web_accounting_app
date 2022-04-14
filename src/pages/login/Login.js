@@ -22,7 +22,7 @@ const Login = () => {
 
 
     return (
-        <div className="login">
+        <section className="login wrapper">
             <h2>Login here</h2>
             <p className="companyHeading">View a summary of money coming in and going out on the Money Tracker dashboard, and in cash flow reports.</p>
             <div className="login-form">
@@ -49,7 +49,7 @@ const Login = () => {
                     <img src={girlImage} alt="girl is writing on account page" />
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 export default Login;

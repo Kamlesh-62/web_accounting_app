@@ -1,7 +1,6 @@
 @import '../../style/root.scss';
 
 .signUp{
-    background-color: $backgroundColor;
     height: 100vh;
     padding-top: 3rem;
     
@@ -17,7 +16,7 @@
         margin: 0 auto;
         text-align: center;
         width: 50%;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         margin-top: 5rem;
         line-height: 1.5;
     }
@@ -59,6 +58,40 @@
         .manImage{
             img{
                 height: 500px;
+            }
+        }
+    }
+}
+
+@media (max-width:900px) {
+    .signUp {
+        .companyHeading {
+            width: 70%;
+        }
+
+        .signUp-form{
+            .manImage img {
+                height: 300px;
+            }
+        }
+    }
+}
+
+@media (max-width:680px) {
+    .signUp{
+        margin-bottom: 4rem;
+        
+        .companyHeading {
+            width: 85%;
+        }
+
+        .signUp-form{
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+
+            .manImage img {
+                height: 240px;
             }
         }
     }

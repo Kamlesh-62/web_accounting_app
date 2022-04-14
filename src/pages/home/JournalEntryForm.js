@@ -27,7 +27,7 @@ const JournalEntryForm = ({uid}) => {
     useEffect(() => {
         if (state.success) {
             setTransactionName('')
-            setAmount('')
+            setAmount('12')
             setDate('')
         }
     }, [state.success])
@@ -63,8 +63,8 @@ const JournalEntryForm = ({uid}) => {
                 required
                 >
                     <option value="" disabled >Revenue List</option>
-                    <option value="Sales">Sales</option>
-                    <option value="Income form services">Services</option>
+                    <option value="sales">Sales</option>
+                    <option value="services">Services</option>
                     <option value="other">Other Revenue</option>
                 </select> 
                 </>

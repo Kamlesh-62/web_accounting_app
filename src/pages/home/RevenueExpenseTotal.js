@@ -50,9 +50,11 @@ const RevenueExpenseTotal = ({ documents}) => {
             </section>
             <article className='result'>
                 <div>
-                    {revenueTotal >= expenseTotal ? 
-                        <p className='positive'> Your total revenue is <span>${revenueTotal - expenseTotal}</span>.</p>:
-                        <p className='negative'> Your total expense is <span>$({revenueTotal - expenseTotal}) </span>.</p>}
+                    {revenueTotal === 0 && expenseTotal === 0 ? 
+                    <p> Your total balace is 0.</p> :
+                    revenueTotal >= expenseTotal ? 
+                    <p className='positive'> Your total revenue is <span>${revenueTotal - expenseTotal}</span>.</p>:
+                    <p className='negative'> Your total expense is <span>$({revenueTotal - expenseTotal}) </span>.</p>}
                 </div>
             </article>
         </main>

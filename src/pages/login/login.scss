@@ -3,7 +3,6 @@
 .login{
     
     height: 100vh;
-    background-color: $backgroundColor;
     padding-top: 3rem;
     
     h2 {
@@ -17,8 +16,8 @@
         letter-spacing: 1px;
         margin: 0 auto;
         text-align: center;
-        width: 50%;
-        font-size: 1.5rem;
+        width: 60%;
+        font-size: 1.3rem;
         margin-top: 5rem;
         line-height: 1.5;
     }
@@ -60,6 +59,37 @@
         .girlImage {
             img {
                 height: 500px;
+            }
+        }
+    }
+}
+
+@media (max-width:900px) {
+    .login{
+        .companyHeading{
+            width: 70%;
+        }
+
+        .login-form{
+            .girlImage img{
+                height: 300px;
+            }
+        }
+    }
+}
+
+@media (max-width:680px) {
+    .login{
+        .companyHeading {
+            width: 85%;
+        }
+        .login-form{
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+
+            .girlImage img {
+                height: 240px;
             }
         }
     }

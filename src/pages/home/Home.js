@@ -15,8 +15,8 @@ const Home = () => {
         )
     
     return(
-        <main className="home-page">
-            <section className="journalEntryForm-total wrapper">
+        <main className="home-page wrapper">
+            <section className="journalEntryForm-total">
                 <div>
                     <JournalEntryForm uid={user.uid}/>
                 </div>

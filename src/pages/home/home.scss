@@ -5,11 +5,22 @@
     246,252, 0.9));
     min-height: 100vh;
     padding-top: 5rem;
+    margin-bottom: 2rem;
 
     .journalEntryForm-total{
         display: flex;
         justify-content: space-around;
-        width: 100%;
+        // width: 100%;
+    }
+}
+
+@media (max-width:900px){
+    .home-page{
+        .journalEntryForm-total{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
     }
 }
 
