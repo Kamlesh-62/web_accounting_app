@@ -2,7 +2,6 @@ import React from "react";
 
 const CashflowReport = ({documents, user}) => {
 
-    console.log(documents)
 
     let revArray = [];
     let expArray = [];
@@ -28,17 +27,17 @@ const CashflowReport = ({documents, user}) => {
                         </tr>
                         {
                             // revArray.map(singleRevTrasaction =>{ 
-                            //     return singleRevTrasaction.revenueType === 
-                            //     "sales" ?
+                            //     (
+                            //     singleRevTrasaction.revenueType === "sales" ?
                             //     <React.Fragment key={singleRevTrasaction.id} >
-                            //         <p>{singleRevTrasaction.revenueType}</p>
+                            //         <h3>sales</h3>
                             //         <tr >
                             //             <td>{singleRevTrasaction.transactionName}</td>
                             //             <td>{singleRevTrasaction.amount}</td>
                             //         </tr>
                             //     </React.Fragment>:
                             //     <></>
-                            // })
+                            // )})
                         }
                     </tbody>
                 </table>

@@ -19,7 +19,7 @@ const Signup = () => {
 
     return (
         <div className="signUp wrapper">
-            <h2> Signup here</h2>
+            <h2> Signup</h2>
             <p className="companyHeading" >View a summary of money coming in and going out on the Money Tracker dashboard, and in cash flow reports.</p>
             <div className="signUp-form">
                 <form onSubmit={handleSignUpSubmit} >
