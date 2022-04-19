@@ -4,8 +4,7 @@ import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { useFireStore } from '../../hooks/useFirestore';
 
 const EntryList= ({entries}) => {
-    const { deleteDocument, state } = useFireStore('transaction');
-    console.log(state)
+    const { deleteDocument } = useFireStore('transaction');
     return(
         <section className='wrapper entryList'>
             <h3>List of Entries</h3>

@@ -13,9 +13,7 @@ const Navbar = () => {
         <header>
             <nav className='navbar wrapper'>
                 <div className='compnay-logo'>
-                    
                     <h3><Link to='/'>Money Tracker</Link></h3>
-                    {/* <img src={logo} alt="This is comany logo" /> */}
                 </div>
                 {user &&(
                 <>
@@ -48,7 +46,6 @@ const Navbar = () => {
                             <li className='logOut-btn'>
                                 <button  className='btn' onClick={logout}>Logout</button>
                             </li>
-                            
                         </div>
                     )}
                 </ul>

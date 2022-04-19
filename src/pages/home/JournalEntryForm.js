@@ -27,7 +27,7 @@ const JournalEntryForm = ({uid}) => {
     useEffect(() => {
         if (state.success) {
             setTransactionName('')
-            setAmount('12')
+            setAmount('')
             setDate('')
         }
     }, [state.success])

@@ -32,7 +32,7 @@ function App() {
           <Route path="/signup" 
           element={ user ? <Navigate to="/" /> : <Signup />} />
           <Route path="/report" 
-          element={user ?  <Report to="/report" /> : <Login />} />
+          element={<Report />} />
         </Routes>
       </>
       )}

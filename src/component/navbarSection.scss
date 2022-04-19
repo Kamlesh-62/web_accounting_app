@@ -1,8 +1,7 @@
 @import '../style/root';
 
 header{
-    background-color: $whiteColor;
-    position: fixed;
+    background-color: $darkDesignColor;
     width: 100%;
     .navbar{
         display: flex;
@@ -18,7 +17,7 @@ header{
                 letter-spacing: 1px;
                 margin-right: 0.5rem;
                 cursor: pointer;
-                color: $darkDesignColor;
+                color: $whiteColor;
             }
             img{
                 height: 45px;
@@ -29,7 +28,7 @@ header{
             right: 2rem;
             top: 0.9rem;
             font-size: 1.7rem;
-            color: $darkDesignColor;
+            color: $whiteColor;
             display: none;
             z-index: 100;
         }
@@ -53,15 +52,16 @@ header{
                     &:hover:nth-child(1),
                     &:hover:nth-child(2){
                         text-decoration: underline;
+                        color: $whiteColor;
                     }
-                    
                     a{
                         letter-spacing: 1px;
                         text-transform: uppercase;
-                        color: $darkDesignColor;
+                        color: $whiteColor;
                     }
                 }
                 .userName{
+                    color: $whiteColor;
                     text-transform: capitalize;
                     letter-spacing: 1px;
                 }
@@ -70,7 +70,7 @@ header{
                     .btn{
                         background-color: $darkDesignColor;
                         color: $whiteColor;
-                        border: 1px solid $darkDesignColor;
+                        border: 1px solid $whiteColor;
                         &:hover,
                         &:focus{
                             background-color: $whiteColor;
@@ -92,11 +92,11 @@ header{
                 margin-right: 0;
                 transition: display 1s ease-in;
                 position: absolute;
-                background: $whiteColor;
-                top: -1000px;
+                background: $darkDesignColor;
+                top: 54px;
                 right: -1000px;
                 z-index: 1;
-                opacity: 0;
+                opacity: 1;
                 transition: all 0.5s linear ;
                 
                 li {
@@ -110,9 +110,6 @@ header{
             
             .toggelMenuCheckBox:checked+ .menu .menuAfterLogin {
                 right: 0;
-                top: 55px;
-                opacity: 1;
-                transition: opacity 0.5s ease-in-out 0.01s;
             }
 
         }
