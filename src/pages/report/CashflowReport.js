@@ -15,12 +15,23 @@ const CashflowReport = ({documents, user}) => {
         }
     })
 
+    console.log(revArray)
+
+
     return(
         <section className="cashFlow">
-            <h3> Report of Cash Flows for {user.displayName}</h3>
-            <div className="revenueFlow">
-                bzhb
-                
+            <h4> Report of Cash Flows for {user.displayName}</h4>
+            <div>
+                <div className="revenueFlow">
+                    <div>
+                        {
+                           
+                        }
+                    </div>   
+                </div>
+                <div className="expenseFlow">
+
+                </div>
             </div>
             
         </section>

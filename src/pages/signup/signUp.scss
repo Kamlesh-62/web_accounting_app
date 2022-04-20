@@ -16,7 +16,7 @@
         margin: 0 auto;
         text-align: center;
         width: 60%;
-        font-size: 1.3rem;
+        font-size: clamp(1rem, 4vw, 1.3rem);
         margin-top: 5rem;
         line-height: 1.5;
     }
@@ -87,11 +87,9 @@
 
         .signUp-form{
             margin-top: 2rem;
-            display: flex;
-            flex-direction: column;
 
             .manImage img {
-                height: 240px;
+                display: none;
             }
         }
     }
