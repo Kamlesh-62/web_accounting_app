@@ -21,7 +21,7 @@
 
         li{
             border-radius: 3px;
-            flex: 1 1 45%;
+            flex: 0 1 45%;
             padding: 0.35rem 1rem;
             margin: 1rem;
             background-color: $whiteColor;
@@ -78,6 +78,17 @@
     }
     100%{
         transform: rotate(-25deg);
+    }
+}
+
+@media (max-width:1060px) {
+    .entryList {
+        .listOfentries {
+            li {
+                flex: 0 1 85%;
+                margin: 1rem auto;
+            }
+        }
     }
 }
 

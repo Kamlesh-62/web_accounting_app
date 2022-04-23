@@ -1,35 +1,12 @@
 import expense from '../../assets/cost.png';
 import income from '../../assets/income.png';
 import './revenueExpenseTotal.scss'
+import { useRevenueExpenseTotal } from '../../hooks/useRevenueExpenseTotal';
 
-const RevenueExpenseTotal = ({ documents}) => {
+const RevenueExpenseTotal = ({documents}) => {
 
-    
-    let revenueAmontArray = []
-    documents.filter((doc) =>{
-        if (doc.revenueExpense === "revenue"){
-            const revenueAmount = Number(doc.amount);
-            
-            revenueAmontArray.push(revenueAmount);
-        }
-        return revenueAmontArray
-    })
-    
-    let expenseAmontArray = []
-    documents.filter((doc) =>{
-        if (doc.revenueExpense === "expense"){
-            const expenseAmount = Number(doc.amount);
-            expenseAmontArray.push(expenseAmount);
-        }
-        return expenseAmontArray
-    })
+    const { revenueAmontArray, expenseAmontArray, findTotal } = useRevenueExpenseTotal(documents);
 
-    const findTotal = (array) => {
-        const sum = array.reduce( (init, total) =>{
-            return init + total
-        },0)
-        return sum;
-    }
     const revenueTotal = findTotal(revenueAmontArray)
     const expenseTotal = findTotal(expenseAmontArray)
     

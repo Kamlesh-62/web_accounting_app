@@ -111,7 +111,7 @@ const JournalEntryForm = ({uid}) => {
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
                 min="2020-01-01"
-                placeholder="YYYY-MM-DD"
+                pattern="\d{4}-\d{2}-\d{2}"
                  />
 
                 <button className="post-btn btn">Post Entry</button>
