@@ -14,10 +14,11 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 // global styling
 
 
-html {
-    overflow-x: hidden;
+html{
+    overflow: hidden;
     scroll-behavior: smooth;
     background-color: $backgroundColor;
+    width: 100%;
 }
 
 h1,

@@ -6,11 +6,11 @@
     min-height: 100vh;
     padding-top: 5rem;
     margin-bottom: 2rem;
+    overflow-x: hidden;
 
     .journalEntryForm-total{
         display: flex;
         justify-content: space-around;
-        // width: 100%;
     }
 }
 

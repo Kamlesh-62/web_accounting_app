@@ -2,7 +2,7 @@
 
 header{
     background-color: $darkDesignColor;
-    width: 100%;
+    
     .navbar{
         display: flex;
         justify-content: space-between;
@@ -22,7 +22,7 @@ header{
         }
         .hamburgerMenu {
             position: absolute;
-            right: 2rem;
+            left: 2rem;
             top: 0.9rem;
             font-size: 1.7rem;
             color: $whiteColor;
@@ -83,22 +83,25 @@ header{
 @media (max-width:920px){
     header{
         .navbar{
+            flex-direction: row-reverse;
+            .menu{
+                .menuAfterLogin{
+                    width: 200px;
+                    flex-direction: column;
+                    transition: display 1s ease-in;
+                    position: absolute;
+                    background: $darkDesignColor;
+                    top: 53px;
+                    left: -1230px;
+                    transition: all 0.4s linear ;
 
-            .menu .menuAfterLogin{
-                width: 200px;
-                flex-direction: column;
-                margin-right: 0;
-                transition: display 1s ease-in;
-                position: absolute;
-                background: $darkDesignColor;
-                top: 54px;
-                right: -1000px;
-                z-index: 1;
-                opacity: 1;
-                transition: all 0.3s linear ;
-                
-                li {
-                    margin: 1rem auto;
+                    .logOut-btn {
+                        margin-left: 2rem;
+                    }
+                    
+                    li {
+                        margin: 1.1rem auto;
+                    } 
                 }
             }
 
@@ -107,7 +110,8 @@ header{
             }
             
             .toggelMenuCheckBox:checked+ .menu .menuAfterLogin {
-                right: 0;
+                left: 0px;
+                overflow-x: hidden;
             }
 
         }
