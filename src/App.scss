@@ -15,7 +15,7 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 
 
 html{
-    overflow: hidden;
+    overflow-x: hidden;
     scroll-behavior: smooth;
     background-color: $backgroundColor;
     width: 100%;

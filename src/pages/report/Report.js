@@ -13,7 +13,7 @@ const Report = () => {
     
     return(
         <main>
-            {documents && <CashflowReport user={user} documents={documents} />}
+            { documents && <CashflowReport user={user} documents={documents} />}
         </main>
     )
 }

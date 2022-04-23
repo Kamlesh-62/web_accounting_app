@@ -94,6 +94,8 @@ header{
                     top: 53px;
                     left: -1230px;
                     transition: all 0.4s linear ;
+                    text-align: center;
+                    z-index: 10000;
 
                     .logOut-btn {
                         margin-left: 2rem;
