@@ -11,12 +11,13 @@
         border-radius: 10px;
         
         select,
-        input
-        {
+        input[type="text"],
+        input[type="number"],
+        input[type='date']{
             display: block;
             width: 300px;
             padding: 0.50rem 1rem 0.5rem 0;
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
             border: none;
             border-bottom: 1px solid $darkDesignColor ;
             background-color: transparent;
@@ -57,8 +58,10 @@
     .journalEntry-form{
         form{
             padding: 4rem 2rem;
+
             select,
-            input,
+            input[type="text"],
+            input[type="number"],
             input[type='date'],
             button{
                 width: 270px;
