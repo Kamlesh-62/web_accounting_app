@@ -7,7 +7,7 @@ const JournalEntryForm = ({uid}) => {
     const { addDocument, state} = useFireStore('transaction')
     const [date, setDate] = useState('')
     const [expenseType, setExpenseType] = useState('')
-    const [revenueExpense, setRevenueExpense] = useState('revenue')
+    const [revenueExpense, setRevenueExpense] = useState('')
     const [revenueType, setRevenueType] = useState('')
     const [transactionName, setTransactionName] = useState('')
 
@@ -112,6 +112,7 @@ const JournalEntryForm = ({uid}) => {
                 onChange={(e) => setDate(e.target.value)}
                 min="2020-01-01"
                 placeholder="Date"
+                required
                  />
 
                 <button className="post-btn btn">Post Entry</button>

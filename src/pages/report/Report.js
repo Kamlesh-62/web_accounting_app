@@ -10,10 +10,10 @@ const Report = () => {
         ['uid', '==', user.uid],
         ['createdAt', "desc"]
     )
-    
     return(
         <main>
             { documents && <CashflowReport user={user} documents={documents} />}
+            
         </main>
     )
 }

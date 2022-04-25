@@ -5,6 +5,7 @@ import { useRevenueExpenseTotal } from "../../hooks/useRevenueExpenseTotal"
 const CashflowReport = ({ documents, user}) => {
     const { revenueAmontArray, expenseAmontArray, findTotal } = useRevenueExpenseTotal(documents);
 
+
     let revArray = [];
     let expArray = [];
 
@@ -61,7 +62,7 @@ const CashflowReport = ({ documents, user}) => {
                     </tbody>
                     <tfoot>
                         <tr>
-                            <th>Profit</th>
+                            <th>{revenueTotal > expenseTotal? `Profit` : `Loss`}</th>
                             <th></th>
                             <th>${revenueTotal - expenseTotal}</th>
                         </tr>

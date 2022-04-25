@@ -5,6 +5,7 @@
     h3{
         text-align: center;
         margin-top: 3rem;
+        color: $darkDesignColor;
     }
     .cashFlowTable{
         table{
@@ -32,9 +33,10 @@
                 .expense-heading,
                 .income-heading{
                     font-weight: 500;
-                    font-size: 1.2rem;
+                    font-size: 1.1rem;
                     position: relative;
                     color: $primaryColor;
+                    font-family: $primaryFont;
                     td{
                         padding: 0.5rem 0;
                     }
@@ -43,17 +45,19 @@
                 .exp-details{
                     td{
                         &:first-of-type{
-                            padding: 0.3rem 0 0.3rem 1rem;
+                            padding: 0.5rem 0 0.5rem 1rem;
                         }
                     }
                 }
                 .total-expense,
                 .total-income{
+                    font-family: $primaryFont;
                     font-weight: 600;
                     position: relative;
                     color: $primaryColor;
+                    
                     td{
-                        padding: 0.4rem 0;
+                        padding: 0.6rem 0;
                     }
 
                     &:after {
@@ -69,8 +73,8 @@
             }
             
             tfoot{
-                border-top: 1px solid $blackColor;
-                border-bottom: 3px solid $blackColor;
+                border-top: 3px solid $blackColor;
+                border-bottom: 1px solid $blackColor;
                 font-size: 1.2rem;
                 letter-spacing: 1.1px;
                 tr th{
